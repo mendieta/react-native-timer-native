@@ -1,7 +1,7 @@
 {
-  "name": "react-native-timer",
-  "version": "1.3.1",
-  "description": "something to manage timers in react native",
+  "name": "react-native-timer-native",
+  "version": "0.0.1",
+  "description": "A better way to manage timers on react native (taking into account difference between device an debugger time on remote js debug mode)",
   "main": "lib/index.js",
   "scripts": {
     "test": "babel-node test/main.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/fractaltech/react-native-timer.git"
+    "url": "git+ssh://git@github.com/Odinvt/react-native-timer-native.git"
   },
   "author": "Kapil <kapv89@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fractaltech/react-native-timer/issues"
+    "url": "https://github.com/Odinvt/react-native-timer-native/issues"
   },
-  "homepage": "https://github.com/fractaltech/react-native-timer#readme",
+  "homepage": "https://github.com/Odinvt/react-native-timer-native#readme",
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-eslint": "^4.1.8",

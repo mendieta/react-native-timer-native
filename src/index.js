@@ -1,3 +1,10 @@
+import {
+  NativeModules,
+  Platform
+} from 'react-native'
+
+const RNTimer = NativeModules.RNTimer
+
 class Timer {
   timeouts = new Map();
   intervals = new Map();
@@ -5,6 +12,19 @@ class Timer {
   animationFrames = new Map();
 
   contextTimers = new WeakMap();
+
+  timeDiff = 0;
+
+  constructor() {
+    if(__DEV__ && Platform.OS == 'android') {
+      let js_now_time = (new Date()).getTime();
+      js_now_time = "" + js_now_time
+
+      RNTimer.getTime(js_now_time, (systemTime) => {
+        this.timeDiff = parseInt(systemTime.diff)
+      })
+    }
+  }
 
   setTimeout(...args) {
     if ((typeof args[0]) === 'object') {
@@ -19,7 +39,7 @@ class Timer {
       this.contextTimers.set(ctx, new Timer());
     }
 
-    this.contextTimers.get(ctx).setTimeout(name, fn, interval);
+    this.contextTimers.get(ctx).setTimeout(name, fn, interval + this.timeDiff);
 
     return this;
   }
@@ -29,7 +49,7 @@ class Timer {
     this.timeouts.set(name, setTimeout(() => {
       fn();
       this.clearTimeout(name);
-    }, interval));
+    }, interval + this.timeDiff));
 
     return this;
   }
