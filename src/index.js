@@ -21,7 +21,8 @@ class Timer {
       js_now_time = "" + js_now_time
 
       RNTimer.getTime(js_now_time, (systemTime) => {
-        this.timeDiff = parseInt(systemTime.diff)
+        let sysTime = parseInt(systemTime.diff);
+        this.timeDiff = sysTime < 0 ? 0 : sysTime;
       })
     }
   }

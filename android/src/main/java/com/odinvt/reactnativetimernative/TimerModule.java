@@ -35,7 +35,7 @@ public class TimerModule extends ReactContextBaseJavaModule{
     public void getTime(String js_time, Callback success) {
         long time= System.currentTimeMillis();
         long js_time_long = Long.valueOf(js_time);
-        long diff = Math.abs(time - js_time_long);
+        long diff = time - js_time_long;
 
         WritableMap resultData = new WritableNativeMap();
         resultData.putString("time", String.valueOf(time));

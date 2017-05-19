@@ -1,6 +1,6 @@
 {
   "name": "react-native-timer-native",
-  "version": "0.0.1",
+  "version": "2.0.1",
   "description": "A better way to manage timers on react native (taking into account difference between device an debugger time on remote js debug mode)",
   "main": "lib/index.js",
   "scripts": {

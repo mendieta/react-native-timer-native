@@ -2,6 +2,8 @@
 
 Fork of the package [react-native-timer](https://github.com/fractaltech/react-native-timer) adds support of native android time difference between the device and the remote debugger when in JS Remote Debug mode
 
+THE DEVICE TIME MUST BE IN THE FUTURE COMPARED TO THE REMOTE DEBUGGER TIME
+
 ### Install
 
 `npm install --save react-native-timer-native`
